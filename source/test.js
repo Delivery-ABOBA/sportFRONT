@@ -58,7 +58,9 @@ function SportV(endpoint, sport){
     xhr.onreadystatechange = function(){
         if (xhr.readyState === 4 && xhr.status === 200){
             items = JSON.parse(xhr.responseText);
-            print(items);
+            items.forEach((item)=>{
+                document.getElementById("user-profile-name").textContent=items.events[0].T1[0].Nm
+            });
         }
         if (xhr.readyState === 4 && xhr.status === 404){
             lcl_place.innerHTML = "<div>Empty favorites list</div>";
