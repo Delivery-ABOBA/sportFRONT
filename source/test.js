@@ -1,19 +1,10 @@
 var profile_image_input = document.getElementById("upload-profile-photo");
-profile_image_input.addEventListener("change", update_profile_img);
 var tracks_placeholder = document.getElementById("tracks_placeholder");
 var player_placeholder = document.getElementById("player_placeholder");
 
 const server_host = "https://sports.delivery-aboba.repl.co";
 
 const methods = ["POST", "PUT", "PATCH", "DELETE"]
-can_preload = true;
-
-var playlist = null;
-var myPlaylist = null;
-var current_alb = null;
-
-const inactive_color = "#58524e";
-const active_color = "#c54b36";
 
 function print(text){
     console.log(text);
@@ -30,12 +21,6 @@ function forbidden_handler(){
 function logout(){
     document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     document.location.href = "./auth";
-}
-
-function player_color(id){
-    var button_el = document.getElementById(id);
-    if (button_el.getAttribute("stroke") == inactive_color) button_el.setAttribute("stroke", active_color);
-    else button_el.setAttribute("stroke", inactive_color);
 }
 
 function getCookie(name) {
