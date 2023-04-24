@@ -60,7 +60,9 @@ function SportV(endpoint, sport){
             items = JSON.parse(xhr.responseText);
             print(items);
             items.Stages.forEach((item)=>{
+                if(item.events[0].T1.lenght>0){
                 document.getElementById("user-profile-name").textContent=item.events[0].T1[0].Nm;
+                }
             });
         }
         if (xhr.readyState === 4 && xhr.status === 404){
