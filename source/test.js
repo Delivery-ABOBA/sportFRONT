@@ -57,12 +57,13 @@ function SportV(endpoint, sport){
     var xhr = CustomXHR("GET", "/sport/"+"?endpoint="+endpoint+"&sport="+sport);
     xhr.onreadystatechange = function(){
         if (xhr.readyState === 4 && xhr.status === 200){
-            items = JSON.parse(xhr.responseText);
+            var items = JSON.parse(xhr.responseText);
+            var pr = document.getElementById("user-profile-name");
             print(items);
             items.Stages.forEach((item)=>{
                 print(document.getElementById("user-profile-name"));
                 if(item.Events[0].T1.lenght>0){
-                document.getElementById("user-profile-name").innerHTML=item.Events[0].T1[0].Nm.text;
+                pr.innerHTML=item.Events[0].T1[0].Nm;
                 }
             });
         }
