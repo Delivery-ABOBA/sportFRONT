@@ -1,11 +1,61 @@
-<script src="./source/lib/jQuery.min.js"></script>
-<html>
- <head>
+<html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/source/pwa.json">
+    <link href="/source/css/auth.css" rel="stylesheet">
+    <link rel="apple-touch-icon" size="120x120" href="/source/images/144.png">
+    <script language="JavaScript" type="text/javascript" src="/source/lib/jQuery.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/source/lib/cookie.min.js"></script>
 <title>Login</title>
 </head>
 <body>
-<div id="mydiv"></div>
-<script language="JavaScript" type="text/javascript" src="./auth/test.js"></script>
+<div class="login-box">
+    <h2>Login</h2>
+    <form id="main_form">
+        <div class="user-box">
+            <input id="login" name="arg1" required>
+            <label for="login">Login</label>
+        </div>
+        <div class="user-box">
+            <input id="password" type="password" name="arg2" required>
+            <label for="password">Password</label>
+        </div>
+        <div class="user-box" id="confirm_div" style="display: none;">
+            <input id="password_confirm" type="password" name="arg3">
+            <label for="password_confirm">Confirm password</label>
+        </div>
+        <div class="user-box" id="username_div" style="display: none;">
+            <input id="username" name="arg4">
+            <label for="username">Username</label>
+        </div>
+        <div id="buttons_holder">
+            <div style="text-align: center;" id="login_div">
+                <a onclick="login();" id="login_button">
+                    <span></span>
+                    <span></span>
+                    LOGIN
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <div style="text-align: center; display: none;" id="register_div">
+                <a onclick="register();" id="register_button">
+                    <span></span>
+                    <span></span>
+                    REGISTER
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <div style="text-align: center; margin-top: 20px; color: #fff;">
+                <a onclick="show_register_panel();" id="show_register" style="all: unset;">
+                    Register now
+                </a>
+            </div>
+        </div>
+        <input type="submit" id="submit">
+    </form>
+  </div>
+<div class="alert-box" id="alert-box"></div>
+<script language="JavaScript" type="text/javascript" src="/source/auth.js"></script>
 </body></html>
