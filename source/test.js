@@ -59,10 +59,12 @@ function SportV(endpoint, sport){
         if (xhr.readyState === 4 && xhr.status === 200){
             var items = JSON.parse(xhr.responseText);
             print(items);
+            var govno=document.getElementById("rew");
             items.Stages.forEach((item)=>{
                 var pr = document.createElement("div");
                 pr.className="profile-body";
                 pr.innerHTML='<div class="profile-body"><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><h4 id="user-profile-name" class="mb-1">'+ item.Events[0].T1[0].Nm +'</h4><p id="user-profile-online"></p></div>';
+                govno.appendChild(pr);
             });
         }
         if (xhr.readyState === 4 && xhr.status === 404){
