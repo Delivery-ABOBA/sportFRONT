@@ -60,6 +60,7 @@ function SportV(endpoint, sport){
             items = JSON.parse(xhr.responseText);
             print(items);
             items.Stages.forEach((item)=>{
+                print(item);
                 if(item.Events[0].T1.lenght>0){
                 document.getElementById("user-profile-name").textContent=item.Events[0].T1[0].Nm;
                 }
