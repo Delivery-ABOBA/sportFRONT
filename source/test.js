@@ -54,7 +54,7 @@ function CustomXHR(method, path, authorization=true){
 }
 
 function SportV(endpoint, sport){
-    var xhr = CustomXHR("GET", "/sport/"+"?endpoint="+endpoint+"?sport="+sport);
+    var xhr = CustomXHR("GET", "/sport/"+"?endpoint="+endpoint+"&sport="+sport);
     xhr.onreadystatechange = function(){
         if (xhr.readyState === 4 && xhr.status === 200){
             items = JSON.parse(xhr.responseText);
