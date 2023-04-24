@@ -59,7 +59,7 @@ function SportV(endpoint, sport){
         if (xhr.readyState === 4 && xhr.status === 200){
             items = JSON.parse(xhr.responseText);
             print(items);
-            items.forEach((item)=>{
+            items.Stages.forEach((item)=>{
                 document.getElementById("user-profile-name").textContent=item.events[0].T1[0].Nm;
             });
         }
