@@ -62,7 +62,7 @@ function SportV(endpoint, sport){
             items.Stages.forEach((item)=>{
                 print(document.getElementById("user-profile-name"));
                 if(item.Events[0].T1.lenght>0){
-                document.getElementById("user-profile-name").innerHTML=item.Events[0].T1[0].Nm;
+                document.getElementById("user-profile-name").innerHTML=item.Events[0].T1[0].Nm.text;
                 }
             });
         }
