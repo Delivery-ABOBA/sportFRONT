@@ -61,9 +61,9 @@ function SportV(endpoint, sport){
             var pr = document.getElementById("user-profile-name");
             print(items);
             items.Stages.forEach((item)=>{
-                print(document.getElementById("user-profile-name"));
+                print(pr.textContent);
                 if(item.Events[0].T1.lenght>0){
-                pr.innerHTML=item.Events[0].T1[0].Nm;
+                    pr.innerHTML=item.Events[0].T1[0].Nm;
                 }
             });
         }
