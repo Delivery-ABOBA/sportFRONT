@@ -58,13 +58,11 @@ function SportV(endpoint, sport){
     xhr.onreadystatechange = function(){
         if (xhr.readyState === 4 && xhr.status === 200){
             var items = JSON.parse(xhr.responseText);
-            var pr = document.getElementById("user-profile-name");
             print(items);
             items.Stages.forEach((item)=>{
-                print(pr.textContent);
-                if(item.Events[0].T1.lenght>0){
-                    pr.innerHTML=item.Events[0].T1[0].Nm;
-                }
+                var pr = document.createElement("div");
+                pr.className="profile-body";
+                pr.innerHTML='<div class="profile-body"><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><h4 id="user-profile-name" class="mb-1">'+ item.Events[0].T1[0].Nm +'</h4><p id="user-profile-online"></p></div>';
             });
         }
         if (xhr.readyState === 4 && xhr.status === 404){
