@@ -59,17 +59,18 @@ function SportV(endpoint, sport){
         if (xhr.readyState === 4 && xhr.status === 200){
             var items = JSON.parse(xhr.responseText);
             print(items);
-            var govno=document.getElementById("rew");
+            var parent=document.getElementById("accordionExample");
             items.Stages.forEach((item)=>{
-                var pr = document.createElement("div");
-                pr.className="profile-body";
-                pr.innerHTML='<div class="profile-body"><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><h4 id="user-profile-name" class="mb-1">'+ item.Events[0].T1[0].Nm +'</h4><p id="user-profile-online"></p></div>';
-                govno.appendChild(pr);
+                var child = document.createElement("div");
+                child.className="accordion-item";
+                child.innerHTML='<h2 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">' + item.CompN + '</button></h2><div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample"><div class="accordion-body">Weve got kpis for that we need to dialog around your choice of work attire, work flows , nor we need evergreen content, value prop and no scraps hit the floor, but waste of resources.</div></div>';
+                parent.appengChild(child);
+               // var pr = document.createElement("div");
+               // pr.className="profile-body";
+               // pr.innerHTML='<div class="profile-body"><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><h4 id="user-profile-name" class="mb-1">'+ item.Events[0].T1[0].Nm +'</h4><p id="user-profile-online"></p></div>';
+               // parent.appendChild(pr);
             });
-        }
-        if (xhr.readyState === 4 && xhr.status === 404){
-            lcl_place.innerHTML = "<div>Empty favorites list</div>";
-        }
+        }        
     }
     xhr.send();
 }
