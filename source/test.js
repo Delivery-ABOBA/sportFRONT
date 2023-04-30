@@ -75,7 +75,7 @@ function SportV(endpoint, sport){
                 //    events+='<div class="profile-body"><h4 id="user-profile-name" class="mb-1">'+ EV.T1[0].Nm +'</h4><p id="user-profile-online"></p></div>';
                 //});
                 //var counter="ads"+getRandomInt(1000000);
-                parent.innerHTML+='<a href="#" class="card border-0 text-reset" onclick="Matches('+i+')"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">'+items.Stages(i).Sdn+'</h5></div></div></div></div></a>';
+                parent.innerHTML+='<a href="#" class="card border-0 text-reset" onclick="Matches('+i+')"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">'+items.Stages[i].Sdn+'</h5></div></div></div></div></a>';
                // var pr = document.createElement("div");
                // pr.className="profile-body";
                // pr.innerHTML='<div class="profile-body"><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><h4 id="user-profile-name" class="mb-1">'+ item.Events[0].T1[0].Nm +'</h4><p id="user-profile-online"></p></div>';
