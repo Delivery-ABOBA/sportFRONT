@@ -84,8 +84,9 @@ function SportV(endpoint, sport){
 }
 
 function Matches(item){
-  var parent=document.getElementById("container");
-  parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">'+item.Sdn+'</h2></div><div class="card-list" id = "liga"></div>';
+  print(item);
+  //var parent=document.getElementById("container");
+  //parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">'+item.Sdn+'</h2></div><div class="card-list" id = "liga"></div>';
 }
 
 function GoBack(){
