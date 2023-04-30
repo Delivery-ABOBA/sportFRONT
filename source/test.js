@@ -83,6 +83,11 @@ function SportV(endpoint, sport){
     xhr.send();
 }
 
+function Matches(item){
+  var parent=document.getElementById("container");
+  parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">'+item.Sdn+'</h2></div><div class="card-list" id = "liga"></div>';
+}
+
 function GoBack(){
   var parent=document.getElementById("container");
   parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Виды спорта</h2></div><div class="card-list"><a href="#" class="card border-0 text-reset" onclick="SportV(`matches`,`soccer`)"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">Футбол</h5></div></div></div></div></a><a href="#" class="card border-0 text-reset" onclick="SportV(`matches`,`basketball`)"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">Баскетбол</h5></div></div></div></div></a><a href="#" class="card border-0 text-reset" onclick="SportV(`matches`,`hockey`)"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">Хоккей</h5></div></div></div></div></a><a href="#" class="card border-0 text-reset" onclick="SportV(`matches`,`cricket`)"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">Крикет</h5></div></div></div></div></a><a href="#" class="card border-0 text-reset" onclick="SportV(`matches`,`tennis`)"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">Теннис</h5></div></div></div></div></a></div>';
