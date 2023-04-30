@@ -57,22 +57,25 @@ function CustomXHR(method, path, authorization=true){
     return xhr;
 }
 
+var DataMatches = null;
+
 function SportV(endpoint, sport){
     var xhr = CustomXHR("GET", "/sport/"+"?endpoint="+endpoint+"&sport="+sport);
     xhr.onreadystatechange = function(){
         if (xhr.readyState === 4 && xhr.status === 200){
             var items = JSON.parse(xhr.responseText);
+            DataMatches = JSON.parse(xhr.responseText);
             print(items);
             var parent=document.getElementById("container");
             parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Лиги</h2></div><div class="card-list" id = "liga"></div>';
             var parent=document.getElementById("liga");
-            items.Stages.forEach((item)=>{
+            for(i=0; i<=items.Stages.length; i++){
                 //var events = "";
                 //item.Events.forEach((EV)=>{
                 //    events+='<div class="profile-body"><h4 id="user-profile-name" class="mb-1">'+ EV.T1[0].Nm +'</h4><p id="user-profile-online"></p></div>';
                 //});
                 //var counter="ads"+getRandomInt(1000000);
-                parent.innerHTML+='<a href="#" class="card border-0 text-reset" onclick="Matches('+item+')"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">'+item.Sdn+'</h5></div></div></div></div></a>';
+                parent.innerHTML+='<a href="#" class="card border-0 text-reset" onclick="Matches('+i+')"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">'+items.Stages(i).Sdn+'</h5></div></div></div></div></a>';
                // var pr = document.createElement("div");
                // pr.className="profile-body";
                // pr.innerHTML='<div class="profile-body"><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><h4 id="user-profile-name" class="mb-1">'+ item.Events[0].T1[0].Nm +'</h4><p id="user-profile-online"></p></div>';
@@ -85,8 +88,8 @@ function SportV(endpoint, sport){
 
 function Matches(item){
   print(item);
-  //var parent=document.getElementById("container");
-  //parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">'+item.Sdn+'</h2></div><div class="card-list" id = "liga"></div>';
+  var parent=document.getElementById("container");
+  parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">'+DataMatches.Stages(i).Sdn+'</h2></div><div class="card-list" id = "liga"></div>';
 }
 
 function GoBack(){
