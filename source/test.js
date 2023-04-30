@@ -61,9 +61,13 @@ function SportV(endpoint, sport){
             print(items);
             var parent=document.getElementById("accordionExample");
             items.Stages.forEach((item)=>{
+                var events = "";
+                item.Events.forEach((EV)=>{
+                    events+='<div class="profile-body"><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><h4 id="user-profile-name" class="mb-1">'+ EV.T1[0].Nm +'</h4><p id="user-profile-online"></p></div>';
+                });
                 var child = document.createElement("div");
                 child.className="accordion-item";
-                child.innerHTML='<h2 class="accordion-header" id="headingThree"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">' + item.CompN + '</button></h2><div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample"><div class="accordion-body">Weve got kpis for that we need to dialog around your choice of work attire, work flows , nor we need evergreen content, value prop and no scraps hit the floor, but waste of resources.</div></div>';
+                child.innerHTML='<h2 class="accordion-header" id="'+item.Sdn+'"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'+item.Sdn+'" aria-expanded="false" aria-controls="'+item.Sdn+'">'+item.Sdn+'</button></h2><div id="'+item.Sdn+'" class="accordion-collapse collapse" aria-labelledby="'+item.Sdn+'" data-bs-parent="#accordionExample"><div class="accordion-body">'+events+'</div></div>';
                 parent.appendChild(child);
                // var pr = document.createElement("div");
                // pr.className="profile-body";
