@@ -80,7 +80,7 @@ function SportV(endpoint, sport){
                // pr.className="profile-body";
                // pr.innerHTML='<div class="profile-body"><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><h4 id="user-profile-name" class="mb-1">'+ item.Events[0].T1[0].Nm +'</h4><p id="user-profile-online"></p></div>';
                // parent.appendChild(pr);
-            });
+            }
         }        
     }
     xhr.send();
