@@ -6,6 +6,10 @@ const server_host = "https://sports.delivery-aboba.repl.co";
 
 const methods = ["POST", "PUT", "PATCH", "DELETE"]
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
 function print(text){
     console.log(text);
 }
@@ -67,7 +71,8 @@ function SportV(endpoint, sport){
                 });
                 var child = document.createElement("div");
                 child.className="accordion-item";
-                child.innerHTML='<h2 class="accordion-header" id="'+item.Scd+'"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'+item.Scd+'" aria-expanded="false" aria-controls="'+item.Scd+'">'+item.Sdn+'</button></h2><div id="'+item.Scd+'" class="accordion-collapse collapse" aria-labelledby="'+item.Scd+'" data-bs-parent="#accordionExample"><div class="accordion-body">'+events+'</div></div>';
+                var counter="ads"+getRandomInt(6);
+                child.innerHTML='<h2 class="accordion-header" id="'+counter+'"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'+counter+'" aria-expanded="false" aria-controls="'+counter+'">'+item.Sdn+'</button></h2><div id="'+counter+'" class="accordion-collapse collapse" aria-labelledby="'+counter+'" data-bs-parent="#accordionExample"><div class="accordion-body">'+events+'</div></div>';
                 parent.appendChild(child);
                // var pr = document.createElement("div");
                // pr.className="profile-body";
