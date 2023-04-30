@@ -64,7 +64,7 @@ function SportV(endpoint, sport){
             var items = JSON.parse(xhr.responseText);
             print(items);
             var parent=document.getElementById("container");
-            parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Лигы</h2></div><div class="card-list" id = "liga"></div>';
+            parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Лиги</h2></div><div class="card-list" id = "liga"></div>';
             var parent=document.getElementById("liga");
             items.Stages.forEach((item)=>{
                 //var events = "";
