@@ -67,7 +67,7 @@ function SportV(endpoint, sport){
                 });
                 var child = document.createElement("div");
                 child.className="accordion-item";
-                child.innerHTML='<h2 class="accordion-header" id="'+item.Sdn+'"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'+item.Sdn+'" aria-expanded="false" aria-controls="'+item.Sdn+'">'+item.Sdn+'</button></h2><div id="'+item.Sdn+'" class="accordion-collapse collapse" aria-labelledby="'+item.Sdn+'" data-bs-parent="#accordionExample"><div class="accordion-body">'+events+'</div></div>';
+                child.innerHTML='<h2 class="accordion-header" id="'+item.Sid+'"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'+item.Sid+'" aria-expanded="false" aria-controls="'+item.Sid+'">'+item.Sdn+'</button></h2><div id="'+item.Sid+'" class="accordion-collapse collapse" aria-labelledby="'+item.Sid+'" data-bs-parent="#accordionExample"><div class="accordion-body">'+events+'</div></div>';
                 parent.appendChild(child);
                // var pr = document.createElement("div");
                // pr.className="profile-body";
