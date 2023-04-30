@@ -64,6 +64,7 @@ function SportV(endpoint, sport){
             var items = JSON.parse(xhr.responseText);
             print(items);
             var parent=document.getElementById("accordionExample");
+            parent.innerHTML="";
             items.Stages.forEach((item)=>{
                 var events = "";
                 item.Events.forEach((EV)=>{
