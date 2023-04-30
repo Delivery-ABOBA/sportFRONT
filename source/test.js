@@ -71,7 +71,7 @@ function SportV(endpoint, sport){
                 });
                 var child = document.createElement("div");
                 child.className="accordion-item";
-                var counter="ads"+getRandomInt(6);
+                var counter="ads"+getRandomInt(1000000);
                 child.innerHTML='<h2 class="accordion-header" id="'+counter+'"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#'+counter+'" aria-expanded="false" aria-controls="'+counter+'">'+item.Sdn+'</button></h2><div id="'+counter+'" class="accordion-collapse collapse" aria-labelledby="'+counter+'" data-bs-parent="#accordionExample"><div class="accordion-body">'+events+'</div></div>';
                 parent.appendChild(child);
                // var pr = document.createElement("div");
