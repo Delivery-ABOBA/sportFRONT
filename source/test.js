@@ -67,7 +67,7 @@ function SportV(endpoint, sport){
             items.Stages.forEach((item)=>{
                 var events = "";
                 item.Events.forEach((EV)=>{
-                    events+='<div class="profile-body"><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><h4 id="user-profile-name" class="mb-1">'+ EV.T1[0].Nm +'</h4><p id="user-profile-online"></p></div>';
+                    events+='<div class="profile-body"><h4 id="user-profile-name" class="mb-1">'+ EV.T1[0].Nm +'</h4><p id="user-profile-online"></p></div>';
                 });
                 var child = document.createElement("div");
                 child.className="accordion-item";
