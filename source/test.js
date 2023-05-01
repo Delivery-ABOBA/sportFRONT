@@ -139,7 +139,7 @@ function gen(parent, title, val1, val2){
     parent.innerHTML+='<span>'+title+'</span>';
     var val_percent = Math.round(100/max_val*val1);
     var val_percent2= 100-val_percent;
-    parent.innerHTML+='<div style="display: flex;"><div style="display: inline-block; width:50%; margin: 2px;"><div class="progress" style="transform: rotate(180deg);"><div aria-valuemax="'+max_val+'" aria-valuemin="'+min_val+'" aria-valuenow="'+val1+'" style="width: '+val_percent+'%" role="progressbar" class="progress-bar bg-info"></div></div></div><div class="progress" style="display: inline-block; width:50%; margin: 2px;"><div class="progress"><div class="progress-bar bg-warning" role="progressbar" style="width: '+val_percent2+'%" aria-valuenow="'+val2+'" aria-valuemin="'+min_val+'" aria-valuemax="'+max_val+'"></div></div></div></div>';
+    parent.innerHTML+='<div style="display: flex; margin-bottom: 20px;"><div style="display: inline-block; width:50%; margin: 2px;"><div class="progress" style="transform: rotate(180deg);"><div aria-valuemax="'+max_val+'" aria-valuemin="'+min_val+'" aria-valuenow="'+val1+'" style="width: '+val_percent+'%" role="progressbar" class="progress-bar bg-info"></div></div></div><div class="progress" style="display: inline-block; width:50%; margin: 2px;"><div class="progress"><div class="progress-bar bg-warning" role="progressbar" style="width: '+val_percent2+'%" aria-valuenow="'+val2+'" aria-valuemin="'+min_val+'" aria-valuemax="'+max_val+'"></div></div></div></div>';
   }
 }
 
