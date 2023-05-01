@@ -118,7 +118,7 @@ function Matches(item){
   parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">'+DataMatches.Stages[item].Snm+'</h2></div><div class="card-list" id = "liga"></div>';
   var parent=document.getElementById("liga");
   for(i=0; i<DataMatches.Stages[item].Events.length; i++){
-      var date = DataMatches.Stages[item].Events[i].Esd;
+      var date = DataMatches.Stages[item].Events[i].Esd.toString();
       var temp="";
       for(d=0; d<date.length;d++){
         temp+=date[d];
