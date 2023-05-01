@@ -136,7 +136,7 @@ function gen(parent, title, val1, val2){
   var max_val = val1 + val2;
   var min_val = 0;
   if(max_val!=0){
-    parent.innerHTML+='<span>'+title+'</span>';
+    parent.innerHTML+='<div style="display: flex;"><span style="display: inline-block; width:10%; margin: 2px;">'+val1+'</span><span style="display: inline-block; width:80%; margin: 2px;">'+title+'</span><span style="display: inline-block; width:10%; margin: 2px;">'+val2+'</span></div>';
     var val_percent = Math.round(100/max_val*val1);
     var val_percent2= 100-val_percent;
     parent.innerHTML+='<div style="display: flex; margin-bottom: 20px;"><div style="display: inline-block; width:50%; margin: 2px;"><div class="progress" style="transform: rotate(180deg);"><div aria-valuemax="'+max_val+'" aria-valuemin="'+min_val+'" aria-valuenow="'+val1+'" style="width: '+val_percent+'%" role="progressbar" class="progress-bar bg-info"></div></div></div><div class="progress" style="display: inline-block; width:50%; margin: 2px;"><div class="progress"><div class="progress-bar bg-warning" role="progressbar" style="width: '+val_percent2+'%" aria-valuenow="'+val2+'" aria-valuemin="'+min_val+'" aria-valuemax="'+max_val+'"></div></div></div></div>';
@@ -166,43 +166,43 @@ function stats(eid, sport){
                 gen(parent,"Удары по воротам",items[0].Shon, items[1].Shon);
               }
               if(i==1){
-                gen(parent,"Удары по воротам",items[0].Shof, items[1].Shof);
+                gen(parent,"Удары мимо ворот",items[0].Shof, items[1].Shof);
               }
               if(i==2){
-                gen(parent,"Удары по воротам",items[0].Shbl, items[1].Shbl);
+                gen(parent,"Заблокированные удары",items[0].Shbl, items[1].Shbl);
               }
               if(i==3){
-                gen(parent,"Удары по воротам",items[0].Pss, items[1].Pss);
+                gen(parent,"Ведений",items[0].Pss, items[1].Pss);
               }
               if(i==4){
-                gen(parent,"Удары по воротам",items[0].Cos, items[1].Cos);
+                gen(parent,"Перехваты",items[0].Cos, items[1].Cos);
               }
               if(i==5){
-                gen(parent,"Удары по воротам",items[0].Ofs, items[1].Ofs);
+                gen(parent,"Офсайды",items[0].Ofs, items[1].Ofs);
               }
               if(i==6){
-                gen(parent,"Удары по воротам",items[0].Fls, items[1].Fls);
+                gen(parent,"Фоллы",items[0].Fls, items[1].Fls);
               }
               if(i==7){
-                gen(parent,"Удары по воротам",items[0].Ths, items[1].Ths);
+                gen(parent,"Броски",items[0].Ths, items[1].Ths);
               }
               if(i==8){
-                gen(parent,"Удары по воротам",items[0].Ycs, items[1].Ycs);
+                gen(parent,"Желтые карточки",items[0].Ycs, items[1].Ycs);
               }
               if(i==9){
-                gen(parent,"Удары по воротам",items[0].Crs, items[1].Crs);
+                gen(parent,"Подач с флангов",items[0].Crs, items[1].Crs);
               }
               if(i==10){
-                gen(parent,"Удары по воротам",items[0].Att, items[1].Att);
+                gen(parent,"Контр-атаки",items[0].Att, items[1].Att);
               }
               if(i==11){
-                gen(parent,"Удары по воротам",items[0].Gks, items[1].Gks);
+                gen(parent,"Отраженные мячи",items[0].Gks, items[1].Gks);
               }
               if(i==12){
-                gen(parent,"Удары по воротам",items[0].Goa, items[1].Goa);
+                gen(parent,"Забитые мячи",items[0].Goa, items[1].Goa);
               }
               if(i==13){
-                gen(parent,"Удары по воротам",items[0].Trt, items[1].Trt);
+                gen(parent,"Травмы",items[0].Trt, items[1].Trt);
               }
                 //parent.innerHTML+='<a href="https://www.livescore.com'+items.topStories[i].url+'" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">'+items.topStories[i].title+'</h5></div></div></div></div></a>';
             }
