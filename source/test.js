@@ -159,7 +159,7 @@ function stats(eid, sport){
             parent.innerHTML="Матч еще не стартовал";
             return;
           }
-            for(i=0; i<items[0].length; i++){
+            for(i=0; i<Object.keys(items[0]).length; i++){
               if(i==0){
                 gen(parent,"Удары по воротам",items[0].Shon, items[1].Shon);
               }
