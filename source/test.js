@@ -6,13 +6,6 @@ const server_host = "https://sports.delivery-aboba.repl.co";
 
 const methods = ["POST", "PUT", "PATCH", "DELETE"]
 
-function httpGet(text) {
-  var xmlHttp = new XMLHttpRequest();
-  xmlHttp.open("GET", "https://translate.googleapis.com/translate_a/single?format=text&client=gtx&sl=en&tl=ru&dt=t&q=" + text, false);
-  xmlHttp.send(null);
-  return xmlHttp.responseText;
-}
-
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
@@ -74,8 +67,7 @@ function NewsV(endpoint){
             parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Новости</h2></div><div class="card-list" id = "NewsList"></div>';
             var parent=document.getElementById("NewsList");
             for(i=0; i<items.topStories.length; i++){
-                print(httpGet(items.topStories[i].title));
-                parent.innerHTML+='<a href="#" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">'+httpGet(items.topStories[i].title)+'</h5></div></div></div></div></a>';
+                parent.innerHTML+='<a href="#" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">'+items.topStories[i].title+'</h5></div></div></div></div></a>';
             }
         }        
     }
