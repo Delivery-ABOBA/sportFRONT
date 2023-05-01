@@ -130,6 +130,17 @@ function Matches(item, sport){
   }
 }
 
+function gen(parent, title, val1, val2){
+  var val1=parseInt(val1);
+  var val2=parseInt(val2);
+  parent.innerHTML+='<span>'+title+'</span>';
+  var max_val = val1 + val2;
+  var min_val = 0;
+  var val_percent = Math.round(100/max_val*val1);
+  var val_percent2= 100-val_percent;
+  parent.innerHTML+='<div style="display: flex;"><div style="display: inline-block; width:50%; margin: 2px;"><div class="progress" style="transform: rotate(180deg);"><div aria-valuemax="'+max_val+'" aria-valuemin="'+min_val+'" aria-valuenow="'+val1+'" style="width: '+val_percent+'%" role="progressbar" class="progress-bar bg-info"></div></div></div><div class="progress" style="display: inline-block; width:50%; margin: 2px;"><div class="progress"><div class="progress-bar bg-warning" role="progressbar" style="width: '+val_percent2+'%" aria-valuenow="'+val2+'" aria-valuemin="'+min_val+'" aria-valuemax="'+max_val+'"></div></div></div></div>';
+}
+
 function stats(eid, sport){
   var xhr = CustomXHR("GET", "/sport/stats?eid="+eid+"&sport="+sport);
     xhr.onreadystatechange = function(){
@@ -137,9 +148,21 @@ function stats(eid, sport){
             var items = JSON.parse(xhr.responseText);
             print(items);
             var parent=document.getElementById("container");
-            parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Статистика</h2></div><div class="card-list" id = "liga"></div>';
+            parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Статистика</h2></div><div class="card-list" id = "liga" style="text-align: center;"></div>';
             var parent=document.getElementById("liga");
-            for(i=0; i<items.topStories.length; i++){
+          if(items==null){
+            parent.innerHTML="Матч еще не стартовал";
+            return;
+          }
+          items=items.Stat;
+          if(items==null){
+            parent.innerHTML="Матч еще не стартовал";
+            return;
+          }
+            for(i=0; i<items[0].length; i++){
+              if(i==0){
+                gen(parent,"Удары по воротам",items[0].Shon, items[1].Shon);
+              }
                 //parent.innerHTML+='<a href="https://www.livescore.com'+items.topStories[i].url+'" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">'+items.topStories[i].title+'</h5></div></div></div></div></a>';
             }
         }        
