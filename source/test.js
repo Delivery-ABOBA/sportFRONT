@@ -118,8 +118,21 @@ function Matches(item){
   parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">'+DataMatches.Stages[item].Snm+'</h2></div><div class="card-list" id = "liga"></div>';
   var parent=document.getElementById("liga");
   for(i=0; i<DataMatches.Stages[item].Events.length; i++){
-      var date = Date.parse(DataMatches.Stages[item].Events[i].Esd);
-      parent.innerHTML+='<a href="#" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T1[0].Nm+'</h3><h3>'+DataMatches.Stages[item].Events[i].Tr1+'</h3></div><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T2[0].Nm+'</h3><h3>'+DataMatches.Stages[item].Events[i].Tr2+'</h3></div></div></div></div><div class="card-footer">'+date.toString()+'</div></a>';
+      var date = DataMatches.Stages[item].Events[i].Esd;
+      var temp="";
+      for(d=0; d<date.length;d++){
+        temp+=date[d];
+        if(d==3||d==5){
+          temp+="-";
+        }
+        if(d==7){
+          temp+=" ";
+        }
+        if(d==9||d==11){
+          temp+=":";
+        }
+      }
+      parent.innerHTML+='<a href="#" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T1[0].Nm+'</h3><h3>'+DataMatches.Stages[item].Events[i].Tr1+'</h3></div><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T2[0].Nm+'</h3><h3>'+DataMatches.Stages[item].Events[i].Tr2+'</h3></div></div></div></div><div class="card-footer">'+temp+'</div></a>';
   }
 }
 
