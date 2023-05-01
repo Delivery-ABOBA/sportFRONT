@@ -57,8 +57,8 @@ function CustomXHR(method, path, authorization=true){
     return xhr;
 }
 
-function NewsV(){
-    var xhr = CustomXHR("GET", "/news/");
+function NewsV(endpoint){
+    var xhr = CustomXHR("GET", "/sport/"+"?endpoint="+endpoint);
     xhr.onreadystatechange = function(){
         if (xhr.readyState === 4 && xhr.status === 200){
             var items = JSON.parse(xhr.responseText);
