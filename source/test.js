@@ -120,7 +120,7 @@ function Matches(item){
   var date=new Date();
   for(i=0; i<DataMatches.Stages[item].Events.length; i++){
       date = DataMatches.Stages[item].Events[i].Esd;
-      parent.innerHTML+='<a href="#" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T1[0].Nm+'</h3><h3>'+DataMatches.Stages[item].Events[i].Tr1+'</h3></div><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T2[0].Nm+'</h3><h3>'+DataMatches.Stages[item].Events[i].Tr2+'</h3></div></div></div></div><div class="card-footer">'+date+'</div></a>';
+      parent.innerHTML+='<a href="#" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T1[0].Nm+'</h3><h3>'+DataMatches.Stages[item].Events[i].Tr1+'</h3></div><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T2[0].Nm+'</h3><h3>'+DataMatches.Stages[item].Events[i].Tr2+'</h3></div></div></div></div><div class="card-footer">'+date.toString()+'</div></a>';
   }
 }
 
