@@ -77,7 +77,7 @@ function NewsV(endpoint){
 var DataMatches = null;
 
 function SportV(endpoint, sport){
-    var xhr = CustomXHR("GET", "/sport/"+"?endpoint="+endpoint+"&sport="+sport);
+    var xhr = CustomXHR("GET", "/sport/?endpoint="+endpoint+"&sport="+sport);
     xhr.onreadystatechange = function(){
         if (xhr.readyState === 4 && xhr.status === 200){
             var items = JSON.parse(xhr.responseText);
@@ -131,8 +131,20 @@ function Matches(item, sport){
 }
 
 function stats(eid, sport){
-  print(eid);
-  print(sport);
+  var xhr = CustomXHR("GET", "/sport/stats?eid="+eid+"&sport="+sport);
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState === 4 && xhr.status === 200){
+            var items = JSON.parse(xhr.responseText);
+            print(items);
+            var parent=document.getElementById("container");
+            parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Статистика</h2></div><div class="card-list" id = "liga"></div>';
+            var parent=document.getElementById("liga");
+            for(i=0; i<items.topStories.length; i++){
+                //parent.innerHTML+='<a href="https://www.livescore.com'+items.topStories[i].url+'" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">'+items.topStories[i].title+'</h5></div></div></div></div></a>';
+            }
+        }        
+    }
+    xhr.send();
 }
 
 function GoBack(){
