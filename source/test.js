@@ -64,8 +64,8 @@ function NewsV(endpoint){
             var items = JSON.parse(xhr.responseText);
             print(items);
             var parent=document.getElementById("NewsTab");
-            parent.innerHTML='<div class="card-list" id = "liga"></div>';
-            var parent=document.getElementById("liga");
+            parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Новости</h2></div><div class="card-list" id = "NewsList"></div>';
+            var parent=document.getElementById("NewsList");
             for(i=0; i<items.topStories.length; i++){
                 //var events = "";
                 //item.Events.forEach((EV)=>{
