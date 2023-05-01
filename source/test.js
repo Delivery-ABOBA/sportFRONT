@@ -69,7 +69,7 @@ function SportV(endpoint, sport){
             var parent=document.getElementById("container");
             parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Лиги</h2></div><div class="card-list" id = "liga"></div>';
             var parent=document.getElementById("liga");
-            for(i=0; i<=items.Stages.length; i++){
+            for(i=0; i<items.Stages.length; i++){
                 //var events = "";
                 //item.Events.forEach((EV)=>{
                 //    events+='<div class="profile-body"><h4 id="user-profile-name" class="mb-1">'+ EV.T1[0].Nm +'</h4><p id="user-profile-online"></p></div>';
@@ -91,7 +91,7 @@ function Matches(item){
   var parent=document.getElementById("container");
   parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">'+DataMatches.Stages[item].Snm+'</h2></div><div class="card-list" id = "liga"></div>';
   var parent=document.getElementById("liga");
-  for(i=0; i<=DataMatches.Stages[item].Events.length; i++){
+  for(i=0; i<DataMatches.Stages[item].Events.length; i++){
       parent.innerHTML+='<a href="#" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T1[0].Nm+'</h5></div></div></div></div></a>';
   }
 }
