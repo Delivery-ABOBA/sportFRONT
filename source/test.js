@@ -1,4 +1,4 @@
-var profile_image_input = document.getElementById("upload-profile-photo");
+wvar profile_image_input = document.getElementById("upload-profile-photo");
 var tracks_placeholder = document.getElementById("tracks_placeholder");
 var player_placeholder = document.getElementById("player_placeholder");
 
@@ -63,7 +63,7 @@ function NewsV(endpoint){
         if (xhr.readyState === 4 && xhr.status === 200){
             var items = JSON.parse(xhr.responseText);
             print(items);
-            var parent=document.getElementById("container");
+            var parent=document.getElementById("NewsTab");
             parent.innerHTML='<div class="card-list" id = "liga"></div>';
             var parent=document.getElementById("liga");
             for(i=0; i<items.topStories.length; i++){
