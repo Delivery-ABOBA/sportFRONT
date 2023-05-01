@@ -1,4 +1,4 @@
-wvar profile_image_input = document.getElementById("upload-profile-photo");
+var profile_image_input = document.getElementById("upload-profile-photo");
 var tracks_placeholder = document.getElementById("tracks_placeholder");
 var player_placeholder = document.getElementById("player_placeholder");
 
