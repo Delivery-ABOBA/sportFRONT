@@ -163,6 +163,45 @@ function stats(eid, sport){
               if(i==0){
                 gen(parent,"Удары по воротам",items[0].Shon, items[1].Shon);
               }
+              if(i==1){
+                gen(parent,"Удары по воротам",items[0].Shof, items[1].Shof);
+              }
+              if(i==2){
+                gen(parent,"Удары по воротам",items[0].Shbl, items[1].Shbl);
+              }
+              if(i==3){
+                gen(parent,"Удары по воротам",items[0].Pss, items[1].Pss);
+              }
+              if(i==4){
+                gen(parent,"Удары по воротам",items[0].Cos, items[1].Cos);
+              }
+              if(i==5){
+                gen(parent,"Удары по воротам",items[0].Ofs, items[1].Ofs);
+              }
+              if(i==6){
+                gen(parent,"Удары по воротам",items[0].Fls, items[1].Fls);
+              }
+              if(i==7){
+                gen(parent,"Удары по воротам",items[0].Ths, items[1].Ths);
+              }
+              if(i==8){
+                gen(parent,"Удары по воротам",items[0].Ycs, items[1].Ycs);
+              }
+              if(i==9){
+                gen(parent,"Удары по воротам",items[0].Crs, items[1].Crs);
+              }
+              if(i==10){
+                gen(parent,"Удары по воротам",items[0].Att, items[1].Att);
+              }
+              if(i==11){
+                gen(parent,"Удары по воротам",items[0].Gks, items[1].Gks);
+              }
+              if(i==12){
+                gen(parent,"Удары по воротам",items[0].Goa, items[1].Goa);
+              }
+              if(i==13){
+                gen(parent,"Удары по воротам",items[0].Trt, items[1].Trt);
+              }
                 //parent.innerHTML+='<a href="https://www.livescore.com'+items.topStories[i].url+'" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">'+items.topStories[i].title+'</h5></div></div></div></div></a>';
             }
         }        
