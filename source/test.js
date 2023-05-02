@@ -234,6 +234,7 @@ function table(eid, sport){
             }
         }
     }
+  xhr.send();
 }
 
 function GoBack(){
