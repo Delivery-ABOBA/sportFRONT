@@ -227,10 +227,10 @@ function table(eid, sport){
                parent.innerHTML+='<table class="table table-bordered"><thead><tr><th scope="col">Команды</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">T</th></tr></thead><tbody><tr><th scope="row">'+items.T1[0].Nm+'</th><td>'+items.Tr1Q1+'</td><td>'+items.Tr1Q2+'</td><td>'+items.Tr1Q3+'</td><td>'+items.Tr1Q4+'</td><td>'+items.Tr1OR+'</td></tr><tr><th scope="row">'+items.T2[0].Nm+'</th><td>'+items.Tr2Q1+'</td><td>'+items.Tr2Q2+'</td><td>'+items.Tr2Q3+'</td><td>'+items.Tr2Q4+'</td><td>'+items.Tr2OR+'</td></tr></tbody></table>';
             }
             if(sport=="hockey"){
-                
+                parent.innerHTML+='<table class="table table-bordered"><thead><tr><th scope="col">Команды</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">OT</th><th scope="col">T</th></tr></thead><tbody><tr><th scope="row">'+items.T1[0].Nm+'</th><td>'+items.Tr1Pe1+'</td><td>'+items.Tr1Pe2+'</td><td>'+items.Tr1Pe3+'</td><td>'+items.Tr1OT+'</td><td>'+items.Tr1+'</td></tr><tr><th scope="row">'+items.T2[0].Nm+'</th><td>'+items.Tr2Pe1+'</td><td>'+items.Tr2Pe2+'</td><td>'+items.Tr2Pe3+'</td><td>'+items.Tr2OT+'</td><td>'+items.Tr2+'</td></tr></tbody></table>';
             }
             if(sport=="tennis"){
-                
+                parent.innerHTML+='<table class="table table-bordered"><thead><tr><th scope="col">Команды</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th><th scope="col">SETS</th></tr></thead><tbody><tr><th scope="row">'+items.T1[0].Nm+'</th><td>'+items.Tr1S1+'</td><td>'+items.Tr1S2+'</td><td>'+items.Tr1S3+'</td><td>'+items.Tr1S4+'</td><td>'+items.Tr1S5+'</td><td>'+items.Tr1+'</td></tr><tr><th scope="row">'+items.T2[0].Nm+'</th><td>'+items.Tr2S1+'</td><td>'+items.Tr2S2+'</td><td>'+items.Tr2S3+'</td><td>'+items.Tr2S4+'</td><td>'+items.Tr2S5+'</td><td>'+items.Tr2+'</td></tr></tbody></table>';
             }
         }
     }
