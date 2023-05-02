@@ -224,13 +224,65 @@ function table(eid, sport){
               return;
             }
             if(sport=="basketball"){
-               parent.innerHTML+='<table class="table table-bordered"><thead><tr><th scope="col">Команды</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">T</th></tr></thead><tbody><tr><th scope="row">'+items.T1[0].Nm+'</th><td>'+items.Tr1Q1+'</td><td>'+items.Tr1Q2+'</td><td>'+items.Tr1Q3+'</td><td>'+items.Tr1Q4+'</td><td>'+items.Tr1OR+'</td></tr><tr><th scope="row">'+items.T2[0].Nm+'</th><td>'+items.Tr2Q1+'</td><td>'+items.Tr2Q2+'</td><td>'+items.Tr2Q3+'</td><td>'+items.Tr2Q4+'</td><td>'+items.Tr2OR+'</td></tr></tbody></table>';
+                var g11=items.Tr1Q1;
+                var g12=items.Tr1Q2;
+                var g13=items.Tr1Q3;
+                var g14=items.Tr1Q4;
+                var g21=items.Tr2Q1;
+                var g22=items.Tr2Q2;
+                var g23=items.Tr2Q3;
+                var g24=items.Tr2Q4;
+                if(g11==undefined){var g11=" "}
+                if(g12==undefined){var g12=" "}
+                if(g13==undefined){var g13=" "}
+                if(g14==undefined){var g14=" "}
+                if(g21==undefined){var g21=" "}
+                if(g22==undefined){var g22=" "}
+                if(g23==undefined){var g23=" "}
+                if(g24==undefined){var g24=" "}
+               parent.innerHTML+='<table class="table table-bordered"><thead><tr><th scope="col">Команды</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">T</th></tr></thead><tbody><tr><th scope="row">'+items.T1[0].Nm+'</th><td>'+g11+'</td><td>'+g12+'</td><td>'+g13+'</td><td>'+g14+'</td><td>'+items.Tr1OR+'</td></tr><tr><th scope="row">'+items.T2[0].Nm+'</th><td>'+g21+'</td><td>'+g22+'</td><td>'+g23+'</td><td>'+g24+'</td><td>'+items.Tr2OR+'</td></tr></tbody></table>';
             }
             if(sport=="hockey"){
-                parent.innerHTML+='<table class="table table-bordered"><thead><tr><th scope="col">Команды</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">OT</th><th scope="col">T</th></tr></thead><tbody><tr><th scope="row">'+items.T1[0].Nm+'</th><td>'+items.Tr1Pe1+'</td><td>'+items.Tr1Pe2+'</td><td>'+items.Tr1Pe3+'</td><td>'+items.Tr1OT+'</td><td>'+items.Tr1+'</td></tr><tr><th scope="row">'+items.T2[0].Nm+'</th><td>'+items.Tr2Pe1+'</td><td>'+items.Tr2Pe2+'</td><td>'+items.Tr2Pe3+'</td><td>'+items.Tr2OT+'</td><td>'+items.Tr2+'</td></tr></tbody></table>';
+                var g11=items.Tr1Pe1;
+                var g12=items.Tr1Pe2;
+                var g13=items.Tr1Pe3;
+                var g1OT=items.Tr1OT;
+                var g21=items.Tr2Pe1;
+                var g22=items.Tr2Pe2;
+                var g23=items.Tr2Pe3;
+                var g2OT=items.Tr2OT;
+                if(g11==undefined){var g11=" "}
+                if(g12==undefined){var g12=" "}
+                if(g13==undefined){var g13=" "}
+                if(g1OT==undefined){var g1OT=" "}
+                if(g21==undefined){var g21=" "}
+                if(g22==undefined){var g22=" "}
+                if(g23==undefined){var g23=" "}
+                if(g2OT==undefined){var g2OT=" "}
+                parent.innerHTML+='<table class="table table-bordered"><thead><tr><th scope="col">Команды</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">OT</th><th scope="col">T</th></tr></thead><tbody><tr><th scope="row">'+items.T1[0].Nm+'</th><td>'+g11+'</td><td>'+g12+'</td><td>'+g13+'</td><td>'+g1OT+'</td><td>'+items.Tr1+'</td></tr><tr><th scope="row">'+items.T2[0].Nm+'</th><td>'+g21+'</td><td>'+g22+'</td><td>'+g23+'</td><td>'+g2OT+'</td><td>'+items.Tr2+'</td></tr></tbody></table>';
             }
             if(sport=="tennis"){
-                parent.innerHTML+='<table class="table table-bordered"><thead><tr><th scope="col">Команды</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th><th scope="col">SETS</th></tr></thead><tbody><tr><th scope="row">'+items.T1[0].Nm+'</th><td>'+items.Tr1S1+'</td><td>'+items.Tr1S2+'</td><td>'+items.Tr1S3+'</td><td>'+items.Tr1S4+'</td><td>'+items.Tr1S5+'</td><td>'+items.Tr1+'</td></tr><tr><th scope="row">'+items.T2[0].Nm+'</th><td>'+items.Tr2S1+'</td><td>'+items.Tr2S2+'</td><td>'+items.Tr2S3+'</td><td>'+items.Tr2S4+'</td><td>'+items.Tr2S5+'</td><td>'+items.Tr2+'</td></tr></tbody></table>';
+                var s11=items.Tr1S1;
+                var s12=items.Tr1S2;
+                var s13=items.Tr1S3;
+                var s14=items.Tr1S4;
+                var s15=items.Tr1S5;
+                var s21=items.Tr2S1;
+                var s22=items.Tr2S2;
+                var s23=items.Tr2S3;
+                var s24=items.Tr2S4;
+                var s25=items.Tr1S5;
+                if(s11==undefined){var s11=" "}
+                if(s12==undefined){var s12=" "}
+                if(s13==undefined){var s13=" "}
+                if(s14==undefined){var s14=" "}
+                if(s15==undefined){var s15=" "}
+                if(s21==undefined){var s21=" "}
+                if(s22==undefined){var s22=" "}
+                if(s23==undefined){var s23=" "}
+                if(s24==undefined){var s24=" "}
+                if(s25==undefined){var s25=" "}
+                parent.innerHTML+='<table class="table table-bordered"><thead><tr><th scope="col">Команды</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th><th scope="col">SETS</th></tr></thead><tbody><tr><th scope="row">'+items.T1[0].Nm+'</th><td>'+s11+'</td><td>'+s12+'</td><td>'+s13+'</td><td>'+s14+'</td><td>'+s15+'</td><td>'+items.Tr1+'</td></tr><tr><th scope="row">'+items.T2[0].Nm+'</th><td>'+s21+'</td><td>'+s22+'</td><td>'+s23+'</td><td>'+s24+'</td><td>'+s25+'</td><td>'+items.Tr2+'</td></tr></tbody></table>';
             }
         }
     }
