@@ -126,7 +126,10 @@ function Matches(item, sport){
       }
     if(goals1==undefined){goals1="-"}
     if(goals2==undefined){goals2="-"}
+    if(sport=="soccer"){
       parent.innerHTML+='<a href="#" onclick="stats('+DataMatches.Stages[item].Events[i].Eid+',`'+sport+'`)" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T1[0].Nm+'</h3><h3>'+goals1+'</h3></div><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T2[0].Nm+'</h3><h3>'+goals2+'</h3></div></div></div></div><div class="card-footer">'+temp+'</div></a>';
+    }else
+      parent.innerHTML+='<a href="#" onclick="table('+DataMatches.Stages[item].Events[i].Eid+',`'+sport+'`)" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T1[0].Nm+'</h3><h3>'+goals1+'</h3></div><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T2[0].Nm+'</h3><h3>'+goals2+'</h3></div></div></div></div><div class="card-footer">'+temp+'</div></a>';
   }
 }
 
@@ -144,7 +147,7 @@ function gen(parent, title, val1, val2){
 }
 
 function stats(eid, sport){
-  var xhr = CustomXHR("GET", "/sport/stats?eid="+eid+"&sport="+sport);
+    var xhr = CustomXHR("GET", "/sport/stats?eid="+eid+"&sport="+sport);
     xhr.onreadystatechange = function(){
         if (xhr.readyState === 4 && xhr.status === 200){
             var items = JSON.parse(xhr.responseText);
@@ -205,6 +208,32 @@ function stats(eid, sport){
         }        
     }
     xhr.send();
+}
+
+function table(eid, sport){
+    var xhr = CustomXHR("GET", "/sport/table?eid="+eid+"&sport="+sport);
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState === 4 && xhr.status === 200){
+            var items = JSON.parse(xhr.responseText);
+            print(items);
+            var parent=document.getElementById("container");
+            parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Статистика</h2></div><div class="card-list" id = "liga" style="text-align: center;"></div>';
+            var parent=document.getElementById("liga");
+            if(items==null){
+              parent.innerHTML="Данных по матчу еще нет";
+              return;
+            }
+            if(sport=="basketball"){
+               parent.innerHTML+='<table class="table table-bordered"><thead><tr><th scope="col">Команды</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">T</th></tr></thead><tbody><tr><th scope="row">'+items.T1[0].Nm+'</th><td>'+items.Tr1Q1+'</td><td>'+items.Tr1Q2+'</td><td>'+items.Tr1Q3+'</td><td>'+items.Tr1Q4+'</td><td>'+items.Tr1OR+'</td></tr><tr><th scope="row">'+items.T2[0].Nm+'</th><td>'+items.Tr2Q1+'</td><td>'+items.Tr2Q2+'</td><td>'+items.Tr2Q3+'</td><td>'+items.Tr2Q4+'</td><td>'+items.Tr2OR+'</td></tr></tbody></table>';
+            }
+            if(sport=="hockey"){
+                
+            }
+            if(sport=="tennis"){
+                
+            }
+        }
+    }
 }
 
 function GoBack(){
