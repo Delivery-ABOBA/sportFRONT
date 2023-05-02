@@ -146,7 +146,7 @@ function stats(eid, sport, team1, team2){
             var parent=document.getElementById("container");
             parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Статистика</h2></div><div class="card-list" id = "liga" style="text-align: center;"></div>';
             var parent=document.getElementById("liga");
-            parent.innerHTML+='<div style="display: flex;"><h2 style="display: inline-block; width:50%; margin: 2px;">'+team1+'</h2><h2 style="display: inline-block; width:50%; margin: 2px;">'+team2+'</h2></div>';
+            parent.innerHTML+='<div style="display: flex;"><h2 style="display: inline-block; width:50%; margin-bottom: 20px; text-align: left;">'+team1+'</h2><h2 style="display: inline-block; width:50%; margin-bottom: 20px; text-align: right;">'+team2+'</h2></div>';
           if(items==null){
             parent.innerHTML="Данных по матчу еще нет";
             return;
