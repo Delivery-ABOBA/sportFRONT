@@ -87,16 +87,7 @@ function SportV(endpoint, sport){
             parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Лиги</h2></div><div class="card-list" id = "liga"></div>';
             var parent=document.getElementById("liga");
             for(i=0; i<items.Stages.length; i++){
-                //var events = "";
-                //item.Events.forEach((EV)=>{
-                //    events+='<div class="profile-body"><h4 id="user-profile-name" class="mb-1">'+ EV.T1[0].Nm +'</h4><p id="user-profile-online"></p></div>';
-                //});
-                //var counter="ads"+getRandomInt(1000000);
                 parent.innerHTML+='<a href="#" class="card border-0 text-reset" onclick="Matches('+i+',`'+sport+'`)"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">'+items.Stages[i].Snm+'</h5></div></div></div></div></a>';
-               // var pr = document.createElement("div");
-               // pr.className="profile-body";
-               // pr.innerHTML='<div class="profile-body"><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><div class="avatar avatar-xl"><div><img id="user-profile-image" class="avatar-img" src="./source/images/default.svg"></div></div><h4 id="user-profile-name" class="mb-1">'+ item.Events[0].T1[0].Nm +'</h4><p id="user-profile-online"></p></div>';
-               // parent.appendChild(pr);
             }
         }        
     }
@@ -127,7 +118,7 @@ function Matches(item, sport){
     if(goals1==undefined){goals1="-"}
     if(goals2==undefined){goals2="-"}
     if(sport=="soccer"){
-      parent.innerHTML+='<a href="#" onclick="stats('+DataMatches.Stages[item].Events[i].Eid+',`'+sport+'`)" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T1[0].Nm+'</h3><h3>'+goals1+'</h3></div><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T2[0].Nm+'</h3><h3>'+goals2+'</h3></div></div></div></div><div class="card-footer">'+temp+'</div></a>';
+      parent.innerHTML+='<a href="#" onclick="stats('+DataMatches.Stages[item].Events[i].Eid+',`'+sport+'`,'+DataMatches.Stages[item].Events[i].Tr1+','+DataMatches.Stages[item].Events[i].Tr2+')" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T1[0].Nm+'</h3><h3>'+goals1+'</h3></div><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T2[0].Nm+'</h3><h3>'+goals2+'</h3></div></div></div></div><div class="card-footer">'+temp+'</div></a>';
     }else
       parent.innerHTML+='<a href="#" onclick="table('+DataMatches.Stages[item].Events[i].Eid+',`'+sport+'`)" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T1[0].Nm+'</h3><h3>'+goals1+'</h3></div><div class="d-flex align-items-center mb-3"><h3 class="me-auto mb-0">'+DataMatches.Stages[item].Events[i].T2[0].Nm+'</h3><h3>'+goals2+'</h3></div></div></div></div><div class="card-footer">'+temp+'</div></a>';
   }
@@ -146,7 +137,7 @@ function gen(parent, title, val1, val2){
   }
 }
 
-function stats(eid, sport){
+function stats(eid, sport, team1, team2){
     var xhr = CustomXHR("GET", "/sport/stats?eid="+eid+"&sport="+sport);
     xhr.onreadystatechange = function(){
         if (xhr.readyState === 4 && xhr.status === 200){
@@ -155,6 +146,7 @@ function stats(eid, sport){
             var parent=document.getElementById("container");
             parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Статистика</h2></div><div class="card-list" id = "liga" style="text-align: center;"></div>';
             var parent=document.getElementById("liga");
+            parent.innerHTML+='<div style="display: flex;"><h2 style="display: inline-block; width:50%; margin: 2px;">'+team1+'</h2><h2 style="display: inline-block; width:50%; margin: 2px;">'+team2+'</h2></div>';
           if(items==null){
             parent.innerHTML="Данных по матчу еще нет";
             return;
