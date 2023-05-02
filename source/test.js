@@ -153,12 +153,12 @@ function stats(eid, sport){
             parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Статистика</h2></div><div class="card-list" id = "liga" style="text-align: center;"></div>';
             var parent=document.getElementById("liga");
           if(items==null){
-            parent.innerHTML="Матч еще не стартовал";
+            parent.innerHTML="Данных по матчу еще нет";
             return;
           }
           items=items.Stat;
           if(items==null){
-            parent.innerHTML="Матч еще не стартовал";
+            parent.innerHTML="Данных по матчу еще нет";
             return;
           }
             for(i=0; i<Object.keys(items[0]).length; i++){
@@ -199,12 +199,8 @@ function stats(eid, sport){
                 gen(parent,"Отраженные мячи",items[0].Gks, items[1].Gks);
               }
               if(i==12){
-                gen(parent,"Забитые мячи",items[0].Goa, items[1].Goa);
-              }
-              if(i==13){
                 gen(parent,"Травмы",items[0].Trt, items[1].Trt);
               }
-                //parent.innerHTML+='<a href="https://www.livescore.com'+items.topStories[i].url+'" class="card border-0 text-reset"><div class="card-body"><div class="row gx-5"><div class="col"><div class="d-flex align-items-center mb-3"><h5 class="me-auto mb-0">'+items.topStories[i].title+'</h5></div></div></div></div></a>';
             }
         }        
     }
