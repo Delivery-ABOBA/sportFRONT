@@ -63,8 +63,9 @@ function videos(){
       if (xhr.readyState === 4 && xhr.status === 200){
         var items = JSON.parse(xhr.responseText);
         print(items);
-        var parent=document.getElementById(trns);
+        var parent=document.getElementById("trns");
         for(i=0;i<items.length;i++){
+          print(items[i]);
             parent.innerHTML+='<a href=`'+items[i].url+'` class="card border-0 text-reset"><div class="card-body"><div class=" mb-3"><div><img src=`'+items[i].poster+'`></div><br><h5 class="me-auto mb-0">'+items[i].name+'</h5></div></div></a>';
         }
       }        
