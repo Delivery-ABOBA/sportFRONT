@@ -62,10 +62,8 @@ function videos(){
     xhr.onreadystatechange = function(){
       if (xhr.readyState === 4 && xhr.status === 200){
         var items = JSON.parse(xhr.responseText);
-        print(items);
         var parent=document.getElementById("trns");
         for(i=0;i<items.length;i++){
-          print(items[i]);
             parent.innerHTML+='<a href=`'+items[i].url+'` class="card border-0 text-reset"><div class="card-body"><div class=" mb-3"><div><img src='+items[i].poster+'></div><br><h5 class="me-auto mb-0">'+items[i].name+'</h5></div></div></a>';
         }
       }        
@@ -78,7 +76,6 @@ function NewsV(endpoint){
     xhr.onreadystatechange = function(){
         if (xhr.readyState === 4 && xhr.status === 200){
             var items = JSON.parse(xhr.responseText);
-            print(items);
             var parent=document.getElementById("NewsTab");
             parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Новости</h2></div><div class="card-list" id = "NewsList"></div>';
             var parent=document.getElementById("NewsList");
@@ -98,7 +95,6 @@ function SportV(endpoint, sport){
         if (xhr.readyState === 4 && xhr.status === 200){
             var items = JSON.parse(xhr.responseText);
             DataMatches = JSON.parse(xhr.responseText);
-            print(items);
             var parent=document.getElementById("container");
             parent.innerHTML='<div class="mb-8"><h2 class="fw-bold m-0">Лиги</h2></div><div class="card-list" id = "liga"></div>';
             var parent=document.getElementById("liga");
