@@ -66,7 +66,7 @@ function videos(){
         var parent=document.getElementById("trns");
         for(i=0;i<items.length;i++){
           print(items[i]);
-            parent.innerHTML+='<a href=`'+items[i].url+'` class="card border-0 text-reset"><div class="card-body"><div class=" mb-3"><div><img src=`'+items[i].poster+'`></div><br><h5 class="me-auto mb-0">'+items[i].name+'</h5></div></div></a>';
+            parent.innerHTML+='<a href=`'+items[i].url+'` class="card border-0 text-reset"><div class="card-body"><div class=" mb-3"><div><img src='+items[i].poster+'></div><br><h5 class="me-auto mb-0">'+items[i].name+'</h5></div></div></a>';
         }
       }        
     }
